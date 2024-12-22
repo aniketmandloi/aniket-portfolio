@@ -69,7 +69,7 @@ export const projectsData = [
     imageUrl: nextDashboardImage,
   },
   {
-    title: "aniketShopImage",
+    title: "Aniket's-Shop",
     description:
       "An ecommerce web application to buy cloths and products, with Authentication",
     tags: [
