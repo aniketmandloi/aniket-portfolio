@@ -3,7 +3,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import nextDashboardImage from "@/public/Next-Dashboard.png";
-// import rmtdevImg from "@/public/rmtdev.png";
+import aniketShopImage from "@/public/Aniket's-Shop.png";
 // import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
@@ -62,24 +62,33 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Nextjs-Dashboard",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
     imageUrl: nextDashboardImage,
   },
   {
-    title: "rmtDev",
+    title: "aniketShopImage",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: nextDashboardImage,
+      "An ecommerce web application to buy cloths and products, with Authentication",
+    tags: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "MaterialUI",
+      "Redux",
+      "Prisma",
+      "Passport.js",
+    ],
+    imageUrl: aniketShopImage,
   },
   {
-    title: "Word Analytics",
+    title: "Nextjs Dashboard",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+      "A web app for quick analytics on Invoices and Customers. It was my First web app using nextjs, Deployed on Vercel",
+    tags: ["Typescript", "React", "Next.js", "PostgreSQL", "Tailwind"],
     imageUrl: nextDashboardImage,
   },
 ] as const;
