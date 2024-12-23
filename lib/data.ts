@@ -1,10 +1,9 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaBitcoin, FaCar, FaMobile, FaPython, FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import nextDashboardImage from "@/public/Next-Dashboard.png";
 import aniketShopImage from "@/public/Aniket's-Shop.png";
-// import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
   {
@@ -35,28 +34,52 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "BlackWallet LTD, Software Developer (Contractor)",
+    location: "Remote, India",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
+      "Developing a Decentralized Crypto Exchange Platform by leveraging TypeScript, Fastify.js, React.js, Redux RTK Query, Postgres, and PrismaORM, resulting in seamless client-side data fetching and high-performance backend operations.",
+    icon: React.createElement(FaBitcoin),
+    date: "Nov 2023 – Present",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Manabu Method, Software Developer (Contractor)",
+    location: "Remote, India",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "Leading the Development of a Cross-platform Mobile Expo-App using React Native, TypeScript, GraphQL, Apollo-Express server, and PrismaORM with Postgres, enabling foreign organizations to provide facilities to unreached communities in forests, targeting a 30% increase in outreach, Ongoing efforts focus on reducing aid response time by 40% and enhancing service delivery through real-time data synchronization and efficient backend operations.",
+    icon: React.createElement(FaMobile),
+    date: "April 2024 – Present",
+  },
+  {
+    title: "MET - Capital, Software Developer",
+    location: "Remote, India",
+    description:
+      "Worked on Hiconium Project with Typescript, Express.js, node.js, GraphQl, Digital Ocean to help build a platform for hypercars, Collected Relevant Data Points using Javascript and Puppeteer.",
+    icon: React.createElement(FaCar),
+    date: "Jan 2024 – April 2024",
+  },
+  {
+    title: "Bitcot, Python Developer",
+    location: "Indore, India",
+    description:
+      "Developed a dynamic Flask web app with OpenAI API integration, utilizing LangChain for NLP, featuring AI components and on used Database extensions such as pgvector for postgres. Also handled NASA data analysis in Python, uploading to A WS S3 using Boto3.",
+    icon: React.createElement(FaPython),
+    date: "July 2023 – Aug 2023",
+  },
+  {
+    title: "Safecity - Red Dot Foundation, Intern",
+    location: "Remote, India",
+    description:
+      "Developed and crafted high-converting landing pages and an engaging frontend for the website, resulting in an impressive 75% enhancement in online visibility. This strategic overhaul contributed significantly to a notable 30% upsurge in user engagement metrics.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "Sep 2021 - Feb 2022",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Prestige Institute of Engineering and Research ",
+    location: "Indore, India",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+      "Major Project: Implemented Deep Learning Modal, using Python , FastAPI and TensorFlow to Achieve 97 .8% accuracy to save more than 62% of potato crop affected by the two major diseases Early Blight and Late Blight with Image Processing.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2019 - 2023",
   },
 ] as const;
 
