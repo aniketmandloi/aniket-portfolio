@@ -4,6 +4,7 @@ import { FaBitcoin, FaCar, FaMobile, FaPython, FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import nextDashboardImage from "@/public/Next-Dashboard.png";
 import aniketShopImage from "@/public/Aniket's-Shop.png";
+import portfolioImage from "@/public/portfolioSiteImage.png";
 
 export const links = [
   {
@@ -14,10 +15,7 @@ export const links = [
     name: "About",
     hash: "#about",
   },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
+
   {
     name: "Skills",
     hash: "#skills",
@@ -25,6 +23,10 @@ export const links = [
   {
     name: "Experience",
     hash: "#experience",
+  },
+  {
+    name: "Projects",
+    hash: "#projects",
   },
   {
     name: "Contact",
@@ -108,11 +110,18 @@ export const projectsData = [
     imageUrl: aniketShopImage,
   },
   {
-    title: "Nextjs Dashboard",
+    title: "Personal Portfolio site",
     description:
-      "A web app for quick analytics on Invoices and Customers. It was my First web app using nextjs, Deployed on Vercel",
-    tags: ["Typescript", "React", "Next.js", "PostgreSQL", "Tailwind"],
-    imageUrl: nextDashboardImage,
+      "Developed a personal Portfolio site from scratch, Just to showcase my skills and show some online presence, Hope you'll like it.",
+    tags: [
+      "Typescript",
+      "React",
+      "Next.js",
+      "Vercel",
+      "Tailwind",
+      "Framer Motion",
+    ],
+    imageUrl: portfolioImage,
   },
 ] as const;
 
