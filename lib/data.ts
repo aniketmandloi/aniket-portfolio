@@ -89,7 +89,7 @@ export const projectsData = [
   {
     title: "Nextjs-Dashboard",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
+      "Took Next.js course online and developed a nextjs dashboard with a lot of features like authentication, charts, tables, and more.",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
     imageUrl: nextDashboardImage,
   },
