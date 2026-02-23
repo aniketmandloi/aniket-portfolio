@@ -1,15 +1,15 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 
 export default function SectionDivider() {
   return (
-    <motion.div
-      className="bg-gray-200 my-24 h-16 w-1 rounded-full hidden sm:block dark:bg-opacity-20"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.125 }}
-    ></motion.div>
+    <section className="border-b-2 border-[var(--line)] bg-[var(--panel-soft)]">
+      <div className="mx-auto w-[min(100%,102rem)] px-4 py-7 text-center sm:px-6 sm:py-8 lg:px-8">
+        <p className="text-lg leading-relaxed text-[var(--ink)] sm:text-xl">
+          Full-stack engineer shipping resilient systems across fintech, healthcare, NGO, and SaaS.
+        </p>
+      </div>
+    </section>
   );
 }

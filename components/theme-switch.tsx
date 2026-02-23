@@ -2,17 +2,20 @@
 
 import { useTheme } from "@/context/theme-context";
 import React from "react";
-import { BsMoon, BsSun } from "react-icons/bs";
+import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 
 export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
+  const isLight = theme === "light";
 
   return (
     <button
-      className="fixed bottom-5 right-5 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950"
+      className="gm-button fixed bottom-4 right-4 z-[1000] flex h-11 w-11 items-center justify-center bg-[var(--yellow)] text-[var(--ink)]"
       onClick={toggleTheme}
+      aria-label={isLight ? "Switch to dark theme" : "Switch to light theme"}
+      title={isLight ? "Dark theme" : "Light theme"}
     >
-      {theme === "light" ? <BsSun /> : <BsMoon />}
+      {isLight ? <BsMoonStarsFill className="text-sm" /> : <BsSunFill className="text-sm" />}
     </button>
   );
 }
