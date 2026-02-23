@@ -14,7 +14,7 @@ export default function Footer() {
 
         <a
           href={`mailto:${contactData.email}`}
-          className="flex items-center bg-[var(--pink)] px-6 py-4 text-sm font-semibold text-black sm:text-base md:px-8"
+          className="flex items-center bg-[var(--pink)] px-6 py-4 text-sm font-semibold break-all text-black sm:text-base md:px-8"
         >
           {contactData.email}
         </a>
