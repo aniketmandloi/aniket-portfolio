@@ -1,46 +1,55 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { aboutParagraphs, operatingPrinciples, profileData } from "@/lib/data";
+import SectionHeading from "./section-heading";
 
 export default function About() {
-  const { ref } = useSectionInView("About");
+  const { ref } = useSectionInView("About", 0.35);
 
   return (
-    <motion.section
-      ref={ref}
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
-      id="about"
-    >
-      <SectionHeading>About me</SectionHeading>
-      <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">Mechanical Engineering</span>, I decided
-        to pursue my passion for programming. I took many courses in coding and
-        learned <span className="font-medium">full-stack web development</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">
-          Typescript, React, Next.js, Node.js, and Postgres
-        </span>
-        . I am also familiar with GraphQL and Prisma. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a software
-        developer.
-      </p>
+    <section ref={ref} id="about" className="scroll-mt-28 border-b-2 border-[var(--line)] bg-[var(--panel-soft)]">
+      <div className="mx-auto w-[min(100%,102rem)] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+        <SectionHeading label="Background">About</SectionHeading>
 
-      <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        football, cricket, watching movies. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>.
-      </p>
-    </motion.section>
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="pt-2">
+            <div className="space-y-4 text-base leading-relaxed text-[var(--ink-muted)] sm:text-lg">
+              {aboutParagraphs.map((paragraph, index) => (
+                <p key={`about-paragraph-${index}`}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="gm-line-top mt-6 bg-[var(--yellow)] px-4 pb-6 pt-6 sm:px-6 lg:mt-0 lg:border-l-2 lg:border-t-0 lg:border-[var(--line)] lg:px-10 lg:pt-2">
+            <p className="gm-kicker text-black/70">Operating principles</p>
+            <ul className="mt-4 space-y-3">
+              {operatingPrinciples.map((principle, index) => (
+                <li
+                  key={`about-principle-${index}`}
+                  className="text-sm leading-relaxed text-black/85 sm:text-base"
+                >
+                  • {principle}
+                </li>
+              ))}
+            </ul>
+
+            <div className="gm-line-top mt-6 pt-5">
+              <p className="gm-kicker text-black/70">Education</p>
+              <h3 className="mt-2 text-lg leading-tight text-black sm:text-xl">
+                {profileData.education.school}
+              </h3>
+              <p className="mt-2 text-sm text-black/85 sm:text-base">
+                {profileData.education.degree}
+              </p>
+              <p className="mt-1 text-sm text-black/85 sm:text-base">
+                {profileData.education.duration}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

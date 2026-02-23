@@ -1,71 +1,83 @@
 "use client";
 
-import { useRef } from "react";
 import { projectsData } from "@/lib/data";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import clsx from "clsx";
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = (typeof projectsData)[number] & {
+  index: number;
+  isFirst: boolean;
+};
 
 export default function Project({
   title,
+  label,
   description,
+  impact,
   tags,
-  imageUrl,
+  index,
+  isFirst,
 }: ProjectProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const primaryTone = index % 2 === 0;
 
   return (
-    <motion.div
-      ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0"
-    >
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
+    <article className={clsx(!isFirst && "gm-line-top")}>
+      <div
+        className={clsx(
+          "p-5 sm:p-8 lg:p-10",
+          primaryTone ? "bg-black text-white" : "bg-[var(--pink)] text-black"
+        )}
+      >
+        <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <p className={clsx("gm-kicker", primaryTone ? "text-white/75" : "text-black/70")}>{label}</p>
+            <h3 className={clsx("mt-2 text-xl leading-tight sm:text-2xl", primaryTone ? "text-[var(--yellow)]" : "text-black")}>
+              {title}
+            </h3>
+
+            <p className={clsx("mt-3 text-sm leading-relaxed sm:text-lg", primaryTone ? "text-white/90" : "text-black/85")}>
+              {description}
+            </p>
+
+            <ul className={clsx("mt-4 space-y-2 text-sm leading-relaxed sm:text-base", primaryTone ? "text-white/90" : "text-black/85")}>
+              {impact.map((point, impactIndex) => (
+                <li key={`${title}-impact-${impactIndex}`} className="relative pl-4">
+                  <span
+                    className={clsx(
+                      "absolute left-0 top-2 h-2 w-2 rounded-full",
+                      primaryTone ? "bg-[var(--yellow)]" : "bg-black"
+                    )}
+                  />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div
+            className={clsx(
+              "rounded-2xl border-2 p-4",
+              primaryTone
+                ? "border-white/40 bg-white/10"
+                : "border-black/40 bg-white/55"
+            )}
+          >
+            <p className={clsx("gm-kicker", primaryTone ? "text-white/75" : "text-black/70")}>Core stack</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {tags.map((tag, tagIndex) => (
+                <span
+                  key={`${title}-tag-${tagIndex}`}
+                  className={clsx(
+                    "gm-pill",
+                    primaryTone ? "!border-white bg-white/10 text-white" : "bg-[var(--panel-soft)] text-black"
+                  )}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
-
-        <Image
-          src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
-          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-        transition 
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
-
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
-
-        group-even:right-[initial] group-even:-left-40"
-        />
-      </section>
-    </motion.div>
+      </div>
+    </article>
   );
 }
