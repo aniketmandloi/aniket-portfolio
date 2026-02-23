@@ -11,7 +11,7 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className="mb-4 sm:mb-5">
-      <div className="flex items-end justify-between gap-4">
+      <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
         <h2 className="text-xl leading-none text-[var(--ink)] sm:text-3xl">{children}</h2>
         <p className="gm-kicker text-[var(--ink-muted)]">{label}</p>
       </div>

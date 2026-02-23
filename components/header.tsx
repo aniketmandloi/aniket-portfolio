@@ -20,9 +20,9 @@ export default function Header() {
             setActiveSection("Home");
             setTimeOfLastClick(Date.now());
           }}
-          className="flex items-center gap-3 border-r border-white/20 px-4 py-4 sm:px-6"
+          className="flex items-center gap-2 border-r border-white/20 px-3 py-3 sm:gap-3 sm:px-6 sm:py-4"
         >
-          <span className="text-2xl font-extrabold uppercase tracking-tight sm:text-3xl">
+          <span className="text-xl font-extrabold uppercase tracking-tight sm:text-3xl">
             ANIKET
           </span>
           <span className="hidden items-center gap-2 rounded-full border border-white/35 px-3 py-1 text-xs font-semibold md:inline-flex">
@@ -68,7 +68,7 @@ export default function Header() {
               setActiveSection("Contact");
               setTimeOfLastClick(Date.now());
             }}
-            className="flex items-center border-l border-white/20 bg-[var(--pink)] px-5 text-base font-semibold text-black sm:px-7"
+            className="flex items-center border-l border-white/20 bg-[var(--pink)] px-4 text-sm font-semibold text-black sm:px-7 sm:text-base"
           >
             Contact
           </Link>

@@ -20,7 +20,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="relative scroll-mt-36 overflow-hidden border-b-2 border-[var(--line)] bg-[var(--bg)] pb-12 pt-12 sm:pt-14 lg:pb-16 lg:pt-16"
+      className="relative scroll-mt-36 overflow-hidden border-b-2 border-[var(--line)] bg-[var(--bg)] pb-10 pt-10 sm:pb-12 sm:pt-14 lg:pb-16 lg:pt-16"
     >
       <span className="gm-hero-coin gm-hero-coin-left" aria-hidden>
         A
@@ -46,7 +46,7 @@ export default function Intro() {
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link
               href="#contact"
-              className="gm-button inline-flex items-center gap-2 bg-black px-5 py-3 text-sm font-semibold text-white sm:text-base"
+              className="gm-button inline-flex items-center gap-2 bg-black px-5 py-3 text-sm font-semibold text-white max-sm:w-full max-sm:justify-center sm:text-base"
               onClick={() => {
                 setActiveSection("Contact");
                 setTimeOfLastClick(Date.now());
@@ -59,7 +59,7 @@ export default function Intro() {
             <a
               href={contactData.resumePath}
               download
-              className="gm-button inline-flex items-center bg-[var(--panel-soft)] px-5 py-3 text-sm font-semibold text-[var(--ink)] sm:text-base"
+              className="gm-button inline-flex items-center bg-[var(--panel-soft)] px-5 py-3 text-sm font-semibold text-[var(--ink)] max-sm:w-full max-sm:justify-center sm:text-base"
             >
               Download resume
             </a>
@@ -68,7 +68,7 @@ export default function Intro() {
               href={contactData.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="gm-button inline-flex items-center gap-2 bg-[var(--panel-soft)] px-4 py-3 text-sm font-semibold text-[var(--ink)] sm:text-base"
+              className="gm-button inline-flex items-center gap-2 bg-[var(--panel-soft)] px-4 py-3 text-sm font-semibold text-[var(--ink)] max-sm:flex-1 max-sm:justify-center sm:text-base"
             >
               <BsLinkedin /> LinkedIn
             </a>
@@ -77,7 +77,7 @@ export default function Intro() {
               href={contactData.github}
               target="_blank"
               rel="noreferrer"
-              className="gm-button inline-flex items-center gap-2 bg-[var(--panel-soft)] px-4 py-3 text-sm font-semibold text-[var(--ink)] sm:text-base"
+              className="gm-button inline-flex items-center gap-2 bg-[var(--panel-soft)] px-4 py-3 text-sm font-semibold text-[var(--ink)] max-sm:flex-1 max-sm:justify-center sm:text-base"
             >
               <FaGithub /> GitHub
             </a>
@@ -120,12 +120,12 @@ export default function Intro() {
               {profileData.headline}
             </p>
 
-            <div className="mt-8 grid grid-cols-3 overflow-hidden rounded-2xl border-2 border-[var(--line)]">
+            <div className="mt-8 grid grid-cols-1 overflow-hidden rounded-2xl border-2 border-[var(--line)] sm:grid-cols-3">
               <div className="bg-[var(--panel)] p-4">
                 <p className="text-xl font-semibold text-[var(--ink)] sm:text-2xl">2+</p>
                 <p className="text-xs text-[var(--ink-muted)] sm:text-sm">Years</p>
               </div>
-              <div className="border-x-2 border-[var(--line)] bg-[var(--panel)] p-4">
+              <div className="border-y-2 border-[var(--line)] bg-[var(--panel)] p-4 sm:border-x-2 sm:border-y-0">
                 <p className="text-xl font-semibold text-[var(--ink)] sm:text-2xl">4</p>
                 <p className="text-xs text-[var(--ink-muted)] sm:text-sm">Domains</p>
               </div>

@@ -259,23 +259,10 @@ pre,
   }
 
   .gm-hero-coin {
-    width: 5.2rem;
-    height: 5.2rem;
-    font-size: 2rem;
+    display: none;
   }
 
-  .gm-hero-coin-left {
-    left: -2rem;
-    top: 32rem;
-  }
-
-  .gm-hero-coin-top {
-    right: -1.8rem;
-    top: -1.6rem;
-  }
-
-  .gm-hero-coin-right {
-    right: -2rem;
-    top: 47rem;
+  .gm-tech-window {
+    box-shadow: 5px 5px 0 rgba(17, 17, 17, 0.55);
   }
 }
