@@ -1,15 +1,38 @@
+import type { Metadata } from "next";
+import { Fraunces, Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import Header from "@/components/header";
-import ActiveSectionContextProvider from "@/context/active-section-context";
-import Footer from "@/components/footer";
-import ThemeContextProvider from "@/context/theme-context";
-import ThemeSwitch from "@/components/theme-switch";
-import { Toaster } from "react-hot-toast";
 
-export const metadata = {
-  title: "Aniket Mandloi | Software Engineer",
+const display = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  axes: ["opsz", "SOFT"],
+});
+
+const sans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Aniket Mandloi — Software Engineer",
   description:
-    "Portfolio of Aniket Mandloi - full-stack engineer focused on resilient backend systems, SaaS architecture, and cross-platform product delivery.",
+    "Portfolio of Aniket Mandloi. Software engineer building cross-domain products — crypto infrastructure, healthtech, humanitarian tooling, and AI verification.",
+  openGraph: {
+    title: "Aniket Mandloi — Software Engineer",
+    description:
+      "Cross-domain software engineer. Building at the intersection of scale, reliability, and real users.",
+    type: "website",
+  },
+  authors: [{ name: "Aniket Mandloi" }],
 };
 
 export default function RootLayout({
@@ -18,17 +41,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
-      <body className="min-h-screen bg-[var(--bg)] pt-[7.2rem] text-[var(--ink)] lg:pt-[5.5rem]">
-        <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <Header />
-            {children}
-            <Footer />
-            <Toaster position="top-right" />
-            <ThemeSwitch />
-          </ActiveSectionContextProvider>
-        </ThemeContextProvider>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+    >
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
