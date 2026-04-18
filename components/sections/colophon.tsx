@@ -46,7 +46,12 @@ export function Colophon() {
           </div>
 
           <div className="col-span-12 mt-8 md:col-span-3 md:col-start-10 md:mt-0">
-            <PhotoFrame aspect="portrait" caption="Figure 01 · Workspace" />
+            <PhotoFrame
+              src="/workspace.jpg"
+              alt="Aniket's workspace"
+              aspect="portrait"
+              caption="Figure 01 · Workspace"
+            />
           </div>
         </div>
       </div>

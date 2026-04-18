@@ -74,8 +74,9 @@ export function Masthead() {
           transition={{ duration: 0.9, ease: easeOutExpo, delay: 0.55 }}
           className="col-span-12 mt-10 md:col-span-4 md:mt-0"
         >
-          {/* Drop an image at /public/portrait.jpg and pass src="/portrait.jpg" to activate */}
           <PhotoFrame
+            src="/portrait.jpg"
+            alt="Aniket Mandloi — side profile portrait"
             aspect="portrait"
             caption="Portrait · 2026 · A. Mandloi"
             priority

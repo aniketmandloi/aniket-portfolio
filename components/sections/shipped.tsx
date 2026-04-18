@@ -58,6 +58,8 @@ function FeaturedProject({ project }: { project: Project }) {
     >
       <div className="col-span-12 md:col-span-7">
         <PhotoFrame
+          src={project.image}
+          alt={project.name}
           aspect="wide"
           caption={`Plate 01 · ${project.name}`}
         />
@@ -100,7 +102,12 @@ function ProjectCard({ project, idx }: { project: Project; idx: number }) {
       transition={{ duration: 0.8, ease: easeOutExpo, delay: idx * 0.1 }}
       className="col-span-12 md:col-span-4"
     >
-      <PhotoFrame aspect="portrait" caption={`Plate 0${idx + 2} · ${project.name}`} />
+      <PhotoFrame
+        src={project.image}
+        alt={project.name}
+        aspect="portrait"
+        caption={`Plate 0${idx + 2} · ${project.name}`}
+      />
       <div className="mt-5 flex items-baseline justify-between gap-4">
         <h4 className="font-display text-2xl leading-tight">
           {project.name}

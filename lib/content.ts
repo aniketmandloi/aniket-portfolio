@@ -18,7 +18,7 @@ export type Project = {
   period: string;
   summary: string;
   stack: string[];
-  image: string;
+  image?: string;
   link?: { label: string; href: string };
   featured?: boolean;
 };
@@ -47,7 +47,16 @@ export const profile = {
 export const skillGroups: SkillGroup[] = [
   {
     label: "Languages",
-    items: ["TypeScript", "Python", "Go", "SQL", "JavaScript", "Java", "HTML/CSS", "C++"],
+    items: [
+      "TypeScript",
+      "Python",
+      "Go",
+      "SQL",
+      "JavaScript",
+      "Java",
+      "HTML/CSS",
+      "C++",
+    ],
   },
   {
     label: "Frameworks",
@@ -145,7 +154,8 @@ export const experience: Experience[] = [
 export const projects: Project[] = [
   {
     name: "HallGuard.AI",
-    tagline: "Enterprise AI verification — hallucinations, compliance, factual errors.",
+    tagline:
+      "Enterprise AI verification — hallucinations, compliance, factual errors.",
     period: "Mar 2026 — Present",
     summary:
       "A verification layer for AI output used in legal and financial workflows — with multi-tenant infrastructure, SSE-streamed verification, ephemeral document storage, and a benchmarking harness for measuring detection quality over time.",
@@ -158,7 +168,7 @@ export const projects: Project[] = [
       "Multi-tenant",
       "Background jobs",
     ],
-    image: "/project-hallguard.jpg",
+    image: "/hallguard.png",
     featured: true,
   },
   {
@@ -167,8 +177,14 @@ export const projects: Project[] = [
     period: "2023 — Present",
     summary:
       "Real-time quotes in under 500ms. Portfolio aggregation for 1,000+ token balances with carefully indexed Postgres and RTK Query caching.",
-    stack: ["TypeScript", "Solana", "Ethereum", "Prisma", "Postgres", "RTK Query"],
-    image: "/project-avalon.jpg",
+    stack: [
+      "TypeScript",
+      "Solana",
+      "Ethereum",
+      "Prisma",
+      "Postgres",
+      "RTK Query",
+    ],
   },
   {
     name: "2careAI",
@@ -176,8 +192,14 @@ export const projects: Project[] = [
     period: "2025",
     summary:
       "Telemedicine booking + AI intake routing between GPT-4, Claude, and Gemini. OAuth 2.0 + Google Meet generation served 500+ patients a month.",
-    stack: ["Next.js", "OAuth 2.0", "GPT-4", "Claude", "Gemini", "Google Calendar"],
-    image: "/project-2careai.jpg",
+    stack: [
+      "Next.js",
+      "OAuth 2.0",
+      "GPT-4",
+      "Claude",
+      "Gemini",
+      "Google Calendar",
+    ],
   },
   {
     name: "Manabu Field",
@@ -186,7 +208,6 @@ export const projects: Project[] = [
     summary:
       "A conflict-free sync engine across six data models for NGO field workers. Serverless AWS backend traded containerization for 40% cost savings.",
     stack: ["React Native", "AWS Lambda", "Terraform", "RDS", "API Gateway"],
-    image: "/project-manabu.jpg",
   },
 ];
 
